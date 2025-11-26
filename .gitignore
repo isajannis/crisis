@@ -210,3 +210,6 @@ __marimo__/
 data/preprocessed_images/
 data/preprocessed_images.zip
 
+# GloVe embeddings
+scripts/informative_task/glove.6B.*
+
