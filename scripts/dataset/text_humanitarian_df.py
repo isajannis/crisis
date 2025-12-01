@@ -57,6 +57,14 @@ if text_df is not None:
     print(f"\nDuplicados eliminados: {before_dedup - after_dedup}")
     print(f"Registros después de eliminar duplicados: {after_dedup:,}")
 
+# Eliminamos filas que sean de label "not_humanitarian"
+if text_df is not None:
+    before_filter = len(text_df)
+    text_df = text_df[text_df['text_human'] != 'not_humanitarian']
+    after_filter = len(text_df)
+    print(f"\nRegistros eliminados (not_humanitarian): {before_filter - after_filter}")
+    print(f"Registros después de filtrar: {after_filter:,}")
+
 # Guardar el DataFrame a un archivo CSV para uso futuro
 if text_df is not None:
     output_path = "C:\\Users\\isaja\\Documents\\dcc\\e\\crisis\\data\\crisis_texts_humanitarian_dataset.csv"
